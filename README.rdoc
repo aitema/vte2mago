@@ -4,6 +4,29 @@
 - chiusura Token
 
 
+== SOFTWARE REQUIREMENTS
+- Ruby 2.00
+Linguaggio utilizzato per lo sviluppo del middleware
+- DevKit
+- Mysql Connector 6.1.6
+- Ruby on Rails 4.2.x
+- Git
+Utility per la gestione di repository e sincronizzazione del codice sorgente
+
+
+
+
+Sitografia
+- http://rubyonrails.org/
+- https://www.ruby-lang.org/it/
+- http://rubyinstaller.org/
+- https://git-for-windows.github.io/
+- https://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-6.1.6-win32.msi
+- http://stackoverflow.com/questions/19014117/ruby-mysql2-gem-installation-on-windows-7
+http://stackoverflow.com/questions/29368332/failed-to-load-libmysql-dll-file-using-ruby-on-rails-3
+
+
+
 == TEST
 curl -d '[numero]=nostraref&[soggetto]=soggetto&[descrizione]=questo%20%C3%A8%20il%20simbolo%20dell%20euro%20%E2%82%AC%20la%20descrizione&[codice_esterno]=0001&[numero_cliente]=yyyy&[data_ordine_cliente]=2015-10-09&[0][numero_prodotto]=A1&[0][nome_prodotto]=prodotto&[0][prezzo_unitario]=5&[0][descrizione]=descrizione&[1][numero_prodotto]=A1&[1][nome_prodotto]=prodottoB&[1][prezzo_unitario]=7.56&[1][descrizione]=descrizione3' http://127.0.0.1:4000/order_requests
 

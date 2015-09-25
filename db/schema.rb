@@ -14,54 +14,54 @@
 ActiveRecord::Schema.define(version: 20150925093158) do
 
   create_table "company_requests", force: :cascade do |t|
-    t.string   "codice_esterno",       limit: 255
-    t.string   "ragione_sociale",      limit: 255
-    t.string   "id_univoco",           limit: 255
-    t.string   "partita_iva",          limit: 255
-    t.string   "codice_fiscale",       limit: 255
-    t.string   "indirizzo",            limit: 255
-    t.string   "città",                limit: 255
-    t.string   "codice",               limit: 255
-    t.string   "provincia",            limit: 255
-    t.string   "regione",              limit: 255
-    t.string   "indirizzo_spedizione", limit: 255
-    t.string   "citta_spedizione",     limit: 255
-    t.string   "codice_spedizione",    limit: 255
-    t.string   "provincia_spedizione", limit: 255
-    t.string   "regione_spedizione",   limit: 255
-    t.string   "assegnato_a",          limit: 255
-    t.string   "email",                limit: 255
-    t.string   "telefono",             limit: 255
-    t.string   "fax",                  limit: 255
-    t.string   "sito_web",             limit: 255
-    t.string   "descrizione",          limit: 255
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string   "codice_esterno"
+    t.string   "ragione_sociale"
+    t.string   "id_univoco"
+    t.string   "partita_iva"
+    t.string   "codice_fiscale"
+    t.string   "indirizzo"
+    t.string   "città"
+    t.string   "codice"
+    t.string   "provincia"
+    t.string   "regione"
+    t.string   "indirizzo_spedizione"
+    t.string   "citta_spedizione"
+    t.string   "codice_spedizione"
+    t.string   "provincia_spedizione"
+    t.string   "regione_spedizione"
+    t.string   "assegnato_a"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "fax"
+    t.string   "sito_web"
+    t.string   "descrizione"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "order_item_requests", force: :cascade do |t|
-    t.integer  "order_request_id", limit: 4
-    t.string   "numero_prodotto",  limit: 255
-    t.string   "nome_prodotto",    limit: 255
-    t.text     "descrizione",      limit: 65535
-    t.string   "prezzo_unitario",  limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "order_request_id"
+    t.string   "numero_prodotto"
+    t.string   "nome_prodotto"
+    t.text     "descrizione"
+    t.string   "prezzo_unitario"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "order_requests", force: :cascade do |t|
-    t.string   "numero",              limit: 255
-    t.string   "soggetto",            limit: 255
-    t.float    "totale_documento",    limit: 24
-    t.string   "codice_esterno",      limit: 255
-    t.string   "numero_cliente",      limit: 255
-    t.string   "data_ordine_cliente", limit: 255
-    t.string   "numero_offerta",      limit: 255
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.text     "descrizione",         limit: 65535
-    t.string   "token",               limit: 255
-    t.text     "response",            limit: 65535
+    t.string   "numero"
+    t.string   "soggetto"
+    t.float    "totale_documento"
+    t.string   "codice_esterno"
+    t.string   "numero_cliente"
+    t.string   "data_ordine_cliente"
+    t.string   "numero_offerta"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.text     "descrizione"
+    t.string   "token"
+    t.text     "response"
   end
 
 end
