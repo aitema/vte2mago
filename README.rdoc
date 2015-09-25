@@ -1,0 +1,38 @@
+== TO DO
+- gestione caratteri speciali
+- gestione errori di ritorno MagicLink
+- chiusura Token
+
+
+== TEST
+curl -d '[numero]=nostraref&[soggetto]=soggetto&[descrizione]=questo%20%C3%A8%20il%20simbolo%20dell%20euro%20%E2%82%AC%20la%20descrizione&[codice_esterno]=0001&[numero_cliente]=yyyy&[data_ordine_cliente]=2015-10-09&[0][numero_prodotto]=A1&[0][nome_prodotto]=prodotto&[0][prezzo_unitario]=5&[0][descrizione]=descrizione&[1][numero_prodotto]=A1&[1][nome_prodotto]=prodottoB&[1][prezzo_unitario]=7.56&[1][descrizione]=descrizione3' http://127.0.0.1:4000/order_requests
+
+
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

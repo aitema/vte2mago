@@ -1,0 +1,20 @@
+<%= form_for(@company_request) do |f| %>
+  <% if @company_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company_request.errors.count, "error") %> prohibited this company_request from being saved:</h2>
+
+      <ul>
+      <% @company_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.text_field :codice_esterno %>
+    <%= f.text_field :id_univoco %>
+    <%= f.text_field :ragione_sociale %>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<maxs:Customers xmlns:maxs="http://www.microarea.it/Schema/2004/Smart/ERP/CustomersSuppliers/Customers/Standard/DefaultLight.xsd" tbNamespace="Document.ERP.CustomersSuppliers.Documents.Customers" xTechProfile="DefaultLight">
+  <maxs:Data>
+    <maxs:CustomersSuppliers master="true">
+      <maxs:CustSuppType>3211264</maxs:CustSuppType>
+      <maxs:CustSupp>0001</maxs:CustSupp>
+      <maxs:CompanyName>LEADERCOMP S.r.l.</maxs:CompanyName>
+      <maxs:TaxIdNumber>01011710488</maxs:TaxIdNumber>
+      <maxs:FiscalCode>01011710488</maxs:FiscalCode>
+      <maxs:Address>Via Chiarugi, 27</maxs:Address>
+      <maxs:ZIPCode>50136</maxs:ZIPCode>
+      <maxs:City>FIRENZE</maxs:City>
+      <maxs:County>FI</maxs:County>
+      <maxs:Country>ITALIA</maxs:Country>
+      <maxs:Telephone1>055.660403</maxs:Telephone1>
+      <maxs:Telephone2></maxs:Telephone2>
+      <maxs:Fax></maxs:Fax>
+      <maxs:EMail></maxs:EMail>
+      <maxs:ISOCountryCode>IT</maxs:ISOCountryCode>
+      <maxs:ContactPerson>SIG. BATTAGLIA - RAG.MASSETI</maxs:ContactPerson>
+      <maxs:NaturalPerson>false</maxs:NaturalPerson>
+      <maxs:Payment>RBFM60</maxs:Payment>
+      <maxs:Currency>EUR</maxs:Currency>
+      <maxs:Disabled>false</maxs:Disabled>
+      <maxs:ExternalCode></maxs:ExternalCode>
+    </maxs:CustomersSuppliers>
+    <maxs:OtherBranches></maxs:OtherBranches>
+  </maxs:Data>
+</maxs:Customers>
+
