@@ -29,8 +29,9 @@ gem "rails-settings-cached", "~> 0.4.0"
 gem 'rest-client'
 gem 'builder'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-gem 'mongrel', platforms: [:mingw, :mswin]
-gem 'mongrel_service', platforms: [:mingw, :mswin]
+gem 'thin'
+#gem 'mongrel', platforms: [:mingw, :mswin]
+#gem 'mongrel_service', platforms: [:mingw, :mswin]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

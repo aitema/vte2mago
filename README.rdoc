@@ -9,13 +9,36 @@
 == SOFTWARE REQUIREMENTS
 - Ruby 2.00
 Linguaggio utilizzato per lo sviluppo del middleware
+
 - DevKit
-- Mysql Connector 6.1.6
+
 - Ruby on Rails 4.2.x
+
 - Git
 Utility per la gestione di repository e sincronizzazione del codice sorgente
 
 
+
+SETUP AS A SERVICE
+---------------------
+Eseguire il comando seguente
+C:\Program Files\Windows Resource Kits\Tools> instsrv "vte2mago" "c:\program files\Windows Resource Kits\Tools\srvany.exe"
+
+The service was successfuly added!
+
+Make sure that you go into the Control Panel and use
+the Services applet to change the Account Name and
+Password that this newly installed service will use
+for its Security Context.
+
+This will add an empty entry in the registry, which actually still does nothing. To get it working, we have to start regedit, and navigate to the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\[my_service_name]
+
+Create a new key (folder) named Parameters. This will contain the settings of our actual application that will be run as a service. Add the following String Values:
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vte2mago\Parameters]
+Application=c:\Ruby200\bin\ruby.exe
+AppDirectory=c:\Ruby200\rails\vte2mago
+AppParameters=c:\Ruby200\bin\thin start -p 4000 -e production
 
 
 Sitografia
@@ -25,8 +48,8 @@ Sitografia
 - https://git-for-windows.github.io/
 - https://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-6.1.6-win32.msi
 - http://stackoverflow.com/questions/19014117/ruby-mysql2-gem-installation-on-windows-7
-http://stackoverflow.com/questions/29368332/failed-to-load-libmysql-dll-file-using-ruby-on-rails-3
-
+- http://stackoverflow.com/questions/29368332/failed-to-load-libmysql-dll-file-using-ruby-on-rails-3
+- http://www.dixis.com/?p=140
 
 
 == TEST
