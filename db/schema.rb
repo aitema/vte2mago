@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925093158) do
+ActiveRecord::Schema.define(version: 20150930080550) do
 
   create_table "company_requests", force: :cascade do |t|
     t.string   "codice_esterno"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20150925093158) do
     t.string   "descrizione"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "token"
+    t.text     "response"
   end
 
   create_table "order_item_requests", force: :cascade do |t|

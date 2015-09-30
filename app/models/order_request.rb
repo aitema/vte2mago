@@ -3,15 +3,18 @@
 # Table name: order_requests
 #
 #  id                  :integer          not null, primary key
-#  numero              :string(255)
-#  soggetto            :string(255)
-#  totale_documento    :float(24)
-#  codice_esterno      :string(255)
-#  numero_cliente      :string(255)
-#  data_ordine_cliente :string(255)
-#  numero_offerta      :string(255)
+#  numero              :string
+#  soggetto            :string
+#  totale_documento    :float
+#  codice_esterno      :string
+#  numero_cliente      :string
+#  data_ordine_cliente :string
+#  numero_offerta      :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  descrizione         :text
+#  token               :string
+#  response            :text
 #
 
 class OrderRequest < ActiveRecord::Base
@@ -88,9 +91,6 @@ class OrderRequest < ActiveRecord::Base
         </maxs:Data>
       </maxs:CustQuota>"
 
-    #puts set_data_xml
-
-
     xml.instruct! :xml, :version => "1.0"
     xml.soap :Envelope,
              "xmlns:xsi".to_sym => "http://www.w3.org/2001/XMLSchema-instance",
@@ -104,8 +104,6 @@ class OrderRequest < ActiveRecord::Base
         }
       end
     end
-
-    puts xml_request
     response = RestClient.post "http://#{MAGO_HOST}/MagoNet/TbServices/TbServices.asmx", xml_request, :content_type => "text/xml"
     true
   end
@@ -133,17 +131,19 @@ class OrderRequest < ActiveRecord::Base
     response = RestClient.post "http://#{MAGO_HOST}/MagoNet/LoginManager/LoginManager.asmx", xml_request, :content_type => "text/xml"
 
     authenticationToken = ""
+    loginCompactResult = ""
     doc = Nokogiri::XML::parse response
     body = doc.at_xpath("//soap:Body")
     body.children.each do |node|
       node.children.each do |subnode|
         puts "#{subnode.name} #{subnode.text}"
         authenticationToken = subnode.text if subnode.name == 'authenticationToken'
+        loginCompactResult = subnode.text if subnode.name == 'LoginCompactResult'
       end
     end
     self.token = authenticationToken
     self.save
-
+    loginCompactResult
   end
 
 

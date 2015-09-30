@@ -3,15 +3,18 @@
 # Table name: order_requests
 #
 #  id                  :integer          not null, primary key
-#  numero              :string(255)
-#  soggetto            :string(255)
-#  totale_documento    :float(24)
-#  codice_esterno      :string(255)
-#  numero_cliente      :string(255)
-#  data_ordine_cliente :string(255)
-#  numero_offerta      :string(255)
+#  numero              :string
+#  soggetto            :string
+#  totale_documento    :float
+#  codice_esterno      :string
+#  numero_cliente      :string
+#  data_ordine_cliente :string
+#  numero_offerta      :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  descrizione         :text
+#  token               :string
+#  response            :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -2,7 +2,7 @@ require 'rest_client'
 require 'nokogiri'
 require 'builder'
 
-#406ef624-8417-4bc1-902c-77c773900970
+
 HOST = "192.168.0.64"
 
 puts "### SOAP Request Logoff"
@@ -15,7 +15,7 @@ xml.soap :Envelope,
          "xmlns:soap".to_sym => "http://schemas.xmlsoap.org/soap/envelope/" do
   xml.soap :Body do
     xml.LogOff("xmlns" => "http://microarea.it/LoginManager/") {
-      xml.authenticationToken "891522e0-929c-4698-967e-5f439d98ccc6"
+      xml.authenticationToken "d3569c14-45de-4aa0-8c73-e961da94420c"
     }
   end
 end

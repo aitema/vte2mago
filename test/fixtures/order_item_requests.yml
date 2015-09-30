@@ -4,10 +4,10 @@
 #
 #  id               :integer          not null, primary key
 #  order_request_id :integer
-#  numero_prodotto  :string(255)
-#  nome_prodotto    :string(255)
-#  descrizione      :text(65535)
-#  prezzo_unitario  :string(255)
+#  numero_prodotto  :string
+#  nome_prodotto    :string
+#  descrizione      :text
+#  prezzo_unitario  :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

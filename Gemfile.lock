@@ -163,6 +163,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mongrel
+  mongrel_service
   rails (= 4.2.4)
   rails-settings-cached (~> 0.4.0)
   rest-client

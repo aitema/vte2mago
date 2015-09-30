@@ -2,6 +2,8 @@
 - gestione caratteri speciali
 - gestione errori di ritorno MagicLink
 - chiusura Token
+- check se azienda esistente
+- creazione utente
 
 
 == SOFTWARE REQUIREMENTS

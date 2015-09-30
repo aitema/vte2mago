@@ -21,7 +21,7 @@ class OrderRequestsController < ApplicationController
 
   def mago_login
     k = OrderRequest.new
-    k.login
+    @result = k.login
     @token = k.token
     k.logout
   end
@@ -29,7 +29,6 @@ class OrderRequestsController < ApplicationController
 
 
   def create
-    #@order_request = OrderRequest.new(order_request_params)
 
     #puts params.inspect
     order = params.except('controller','action')

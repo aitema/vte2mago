@@ -25,9 +25,36 @@ class CompanyRequestsController < ApplicationController
   # POST /company_requests
   # POST /company_requests.json
   def create
-    # 1. Archivia la richiesta su database di transito
 
-    #@company_request = CompanyRequest.new(company_request_params)
+    #puts params.inspect
+    company = params.except('controller','action')
+    #puts order.keys
+    company = company.except('ragione_sociale',
+                             'id_univoco',
+                             'totale_documento',
+                             'partita_iva',
+                             'codice_fiscale',
+                             'numero_cliente',
+                             'indirizzo',
+                             'città',
+                             'codice',
+                             'provincia',
+                             'regione',
+                             'indirizzo_spedizione',
+                             'citta_spedizione',
+                             'codice_spedizione',
+                             'provincia_spedizione',
+                             'regione_spedizione',
+                             'assegnato_a',
+                             'email',
+                             'telefono',
+                             'fax',
+                             'sito_web',
+                             'descrizione'
+    )
+    #puts items.inspect
+
+    # 1. Archivia la richiesta su database di transito
     @company_request = CompanyRequest.new(
         :ragione_sociale => params[:ragione_sociale],
         :id_univoco => params[:id_univoco],
@@ -40,7 +67,7 @@ class CompanyRequestsController < ApplicationController
         :regione => params[:regione],
         :indirizzo_spedizione => params[:indirizzo_spedizione],
         :citta_spedizione => params[:citta_spedizione],
-        :codice_spedizione => params[:ragione_sociale],
+        :codice_spedizione => params[:codice_spedizione],
         :provincia_spedizione => params[:provincia_spedizione],
         :regione_spedizione => params[:regione_spedizione],
         :assegnato_a => params[:assegnato_a],
@@ -53,18 +80,40 @@ class CompanyRequestsController < ApplicationController
 
     #respond_with(render :text => "ERROR") unless @company_request.save
 
-    # 2. Chiamata a Mago.Net
-    @code = 3123
+    # 2. Salvataggio richiesta ordine in SqlLite
+    @company_request.save
 
-    # 3. Restituzione risultato
+    # 3. Login MagicLink
+    @company_request.login
+    @company_request.create_tb
+
+    # 5. Controlla se codice esterno già presente
+    @code = @company_request.read_data
+
+    if @code == 'NOT PRESENT'
+      # 4. MagicLink Setdata
+      puts "CREATING NEW CUSTOMER"
+      @message = @company_request.set_data
+    else
+      @message = "CLIENTE ESISTENTE"
+    end
+
+    # 5. Logout MagicLink
+    @company_request.logout
+
+    # 6. Output
     respond_to do |format|
-      if @company_request.save
+      if @message != "ERROR"
         format.html { render :create, layout: "blank"  }
       else
-        format.html { render :error }
-       end
+        format.html { render :error, layout: "blank"  }
+      end
     end
   end
+
+
+
+
 
   # PATCH/PUT /company_requests/1
   # PATCH/PUT /company_requests/1.json
