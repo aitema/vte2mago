@@ -105,7 +105,26 @@ class OrderRequest < ActiveRecord::Base
       end
     end
     response = RestClient.post "http://#{MAGO_HOST}/MagoNet/TbServices/TbServices.asmx", xml_request, :content_type => "text/xml"
-    true
+    puts response
+    #Ricava il codice dell'offerta
+
+    puts "RESPONSE ---- "
+    puts response
+
+    maxs = Nokogiri::XML::parse response
+
+    set_data_result = ""
+    body = maxs.at_xpath("//soap:Body")
+    body.children.each do |node|
+      node.children.each do |subnode|
+        #puts subnode.name
+        set_data_result = subnode.text if subnode.name == "result"
+      end
+    end
+
+    result = Nokogiri::XML::parse set_data_result
+    code = result.at_xpath("//maxs:CustomerQuotation").at_xpath("//maxs:QuotationNo").text rescue "NOT PRESENT"
+    code
   end
 
   def login

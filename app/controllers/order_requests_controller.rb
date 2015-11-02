@@ -71,7 +71,7 @@ class OrderRequestsController < ApplicationController
     @order_request.create_tb
 
     # 5. MagicLink Setdata
-    result = @order_request.set_data
+    @code = @order_request.set_data
 
 
     # 6. Logout MagicLink
@@ -81,7 +81,7 @@ class OrderRequestsController < ApplicationController
 
     # 7. Output
     respond_to do |format|
-      if result
+      if @code != "ERROR"
         format.html { render :create, layout: "blank"  }
       else
         format.html { render :error, layout: "blank"  }
