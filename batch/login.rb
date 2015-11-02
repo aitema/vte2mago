@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'builder'
 
 
-HOST = "192.168.0.64"
+HOST = "192.168.0.71"
 
 puts
 puts "### SOAP Request Login Compact"
@@ -17,7 +17,7 @@ xml.soap :Envelope,
          "xmlns:soap".to_sym => "http://schemas.xmlsoap.org/soap/envelope/" do
   xml.soap :Body do
     xml.LoginCompact("xmlns" => "http://microarea.it/LoginManager/") {
-      xml.userName "Utente1"
+      xml.userName "Franz"
       xml.companyName "prova"
       xml.overWriteLogin "true"
       xml.password ""

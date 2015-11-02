@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'builder'
 
 
-HOST = "192.168.0.64"
+HOST = "192.168.0.71"
 
 puts "### SOAP Request Logoff"
 xml_request = ""
