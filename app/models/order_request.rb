@@ -123,7 +123,9 @@ class OrderRequest < ActiveRecord::Base
     end
 
     result = Nokogiri::XML::parse set_data_result
-    code = result.at_xpath("//maxs:CustomerQuotation").at_xpath("//maxs:QuotationNo").text rescue "NOT PRESENT"
+    code = []
+    code[0] = result.at_xpath("//maxs:CustomerQuotation").at_xpath("//maxs:QuotationNo").text rescue "ERROR"
+    code[1] = result.at_xpath("//maxs:CustomerQuotation").at_xpath("//maxs:CustQuotaId").text rescue "ERROR"
     code
   end
 

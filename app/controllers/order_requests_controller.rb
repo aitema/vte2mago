@@ -81,7 +81,7 @@ class OrderRequestsController < ApplicationController
 
     # 7. Output
     respond_to do |format|
-      if @code != "ERROR"
+      if @code[0] != "ERROR"
         format.html { render :create, layout: "blank"  }
       else
         format.html { render :error, layout: "blank"  }
