@@ -111,6 +111,7 @@ xTechProfile=\"Default\">
           <maxs:CustomersSuppliers master=\"true\">
             <maxs:CustSuppType>3211264</maxs:CustSuppType>
             <maxs:CompanyName>#{self.ragione_sociale}x</maxs:CompanyName>
+            <maxs:ExternalCode>#{self.id_univoco}</maxs:ExternalCode>
             <maxs:TaxIdNumber>#{self.partita_iva}</maxs:TaxIdNumber>
             <maxs:FiscalCode>#{self.codice_fiscale}</maxs:FiscalCode>
             <maxs:Address>#{self.indirizzo}</maxs:Address>
