@@ -95,7 +95,8 @@ class CompanyRequestsController < ApplicationController
       puts "CREATING NEW CUSTOMER"
       @message = @company_request.set_data
     else
-      @message = "CLIENTE ESISTENTE"
+      puts "ERRORE-DUPLICATO"
+      @message = "ERRORE-DUPLICATO"
     end
 
     # 5. Logout MagicLink
@@ -103,7 +104,7 @@ class CompanyRequestsController < ApplicationController
 
     # 6. Output
     respond_to do |format|
-      if @message != "ERROR"
+      if @message != "ERRORE" &&  @message != "ERRORE-DUPLICATO"
         format.html { render :create, layout: "blank"  }
       else
         format.html { render :error, layout: "blank"  }
