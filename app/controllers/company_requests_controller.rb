@@ -104,11 +104,7 @@ class CompanyRequestsController < ApplicationController
 
     # 6. Output
     respond_to do |format|
-      if @message != "ERRORE" &&  @message != "ERRORE-DUPLICATO"
-        format.html { render :create, layout: "blank"  }
-      else
-        format.html { render :error, layout: "blank"  }
-      end
+      format.html { render :create, layout: "blank"  }
     end
   end
 
