@@ -58,7 +58,8 @@ class OrderRequestsController < ApplicationController
           :numero_prodotto => item[1]["numero_prodotto"],
           :nome_prodotto => item[1]["nome_prodotto"],
           :descrizione => item[1]["descrizione"],
-          :prezzo_unitario => item[1]["prezzo_unitario"]
+          :prezzo_unitario => item[1]["prezzo_unitario"],
+          :descrizione_lunga => item[1]["descrizione_lunga"]
       )
     end
 

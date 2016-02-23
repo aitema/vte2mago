@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'builder'
 
 
-HOST = "192.168.0.71"
+HOST = "192.168.0.75"
 
 puts
 puts "### SOAP Request Login Compact"
@@ -16,12 +16,12 @@ xml.soap :Envelope,
          "xmlns:xsd".to_sym => "http://www.w3.org/2001/XMLSchema",
          "xmlns:soap".to_sym => "http://schemas.xmlsoap.org/soap/envelope/" do
   xml.soap :Body do
-    xml.LoginCompact("xmlns" => "http://microarea.it/LoginManager/") {
-      xml.userName "Franz"
-      xml.companyName "prova"
+    xml.LoginCompact("" => "http://microarea.it/LoginManager/") {
+      xml.userName "Utente1"
+      xml.companyName "hyphen_net"
       xml.overWriteLogin "true"
       xml.password ""
-      xml.askingProcess "prova"
+      xml.askingProcess "hyphen_net"
     }
   end
 end
@@ -29,7 +29,7 @@ puts xml_request
 
 response = RestClient.post "http://#{HOST}/MagoNet/LoginManager/LoginManager.asmx", xml_request, :content_type => "text/xml"
 #response = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><LoginCompactResponse xmlns=\"http://microarea.it/LoginManager/\"><LoginCompactResult>10</LoginCompactResult><userName>Utente1</userName><companyName>HYPHEN_NET</companyName></LoginCompactResponse></soap:Body></soap:Envelope>"
-puts
+putsxmlns
 puts "### SOAP Response"
 puts "---start---"
 puts response

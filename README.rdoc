@@ -53,7 +53,7 @@ Sitografia
 
 
 == TEST
-curl -d '[numero]=nostraref&[soggetto]=soggetto&[descrizione]=questo%20%C3%A8%20il%20simbolo%20dell%20euro%20%E2%82%AC%20la%20descrizione&[codice_esterno]=0001&[numero_cliente]=yyyy&[data_ordine_cliente]=2015-10-09&[0][numero_prodotto]=A1&[0][nome_prodotto]=prodotto&[0][prezzo_unitario]=5&[0][descrizione]=descrizione&[1][numero_prodotto]=A1&[1][nome_prodotto]=prodottoB&[1][prezzo_unitario]=7.56&[1][descrizione]=descrizione3' http://127.0.0.1:4000/order_requests
+curl -d '[numero]=nostraref&[soggetto]=soggetto&[descrizione]=questo%20%C3%A8%20il%20simbolo%20dell%20euro%20%E2%82%AC%20la%20descrizione&[codice_esterno]=0001&[numero_cliente]=yyyy&[data_ordine_cliente]=2015-10-09&[0][numero_prodotto]=A1&[0][nome_prodotto]=prodotto&[0][prezzo_unitario]=5&[0][descrizione]=descrizione&[0][descrizione_lunga]=descrizione_luga&[1][numero_prodotto]=A1&[1][nome_prodotto]=prodottoB&[1][prezzo_unitario]=7.56&[1][descrizione]=descrizione3' http://127.0.0.1:4000/order_requests
 
 
 == README

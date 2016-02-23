@@ -81,6 +81,7 @@ class OrderRequest < ActiveRecord::Base
         <maxs:Qty>1.000000000000000</maxs:Qty>
         <maxs:UnitValue>#{item.prezzo_unitario}</maxs:UnitValue>
         <maxs:Notes>#{item.descrizione}</maxs:Notes>
+        <maxs:AGN_Desc>#{item.descrizione_lunga}</maxs:AGN_Desc>
       </maxs:DetailRow>"
     end
 
